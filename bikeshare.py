@@ -90,8 +90,6 @@ def load_data(city, month, day):
 def time_stats(df):
     """
     Displays statistics on the most frequent times of travel.
-
-    Practice Problem #1 information was utilized for this portion.
     """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
