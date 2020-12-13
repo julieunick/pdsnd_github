@@ -4,7 +4,8 @@ December 13, 2020
 ### Explore US Bikeshare Data
 
 ### Description
- Explore data and receive statistics for the US cities Chicago, New York City, and Washington. The program will allow the user to specify the City, Month, and Day that data will be explored for. The following statistics will be calculated and displayed:
+ Explore data and receive statistics for the US cities Chicago, New York City, and Washington.The program will allow the user to specify the City, Month, and Day that data will be explored for.<br><br>
+ The following statistics will be calculated and displayed:
 
 1.  Popular times of travel
   * most common Month
