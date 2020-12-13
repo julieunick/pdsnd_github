@@ -16,7 +16,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print("Hello! Let's explore some US bikeshare data!")
-    
+
     # collects city input from user
     city_input = input("\nPlease enter the city name (chicago, new york city, or washington): ").lower()
     while True:
@@ -24,8 +24,8 @@ def get_filters():
             city = city_input
             break
         else:
-            city_input = input("Unexpected input. Please enter the city name (chicago, new york city, or washington): ").lower()                   
-    
+            city_input = input("Unexpected input. Please enter the city name (chicago, new york city, or washington): ").lower()
+
     # collects month input from user
     month_input = input("\nPlease enter which month you would like the information for. You may enter 'all' or a month name: ").lower()
     while True:
@@ -34,7 +34,7 @@ def get_filters():
             break
         else:
             month_input = input("Unexpected input. Please enter which month you would like the information for. You may enter 'all' or a month name from January to June: ").lower()
-            
+
 
     # collects weekday input from user
     day_input = input("\nPlease enter which day you would like the information for. You may enter 'all' or the name of a weekday: ").lower()
@@ -77,7 +77,7 @@ def load_data(city, month, day):
         # use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-    
+
         df = df[df["month"] == month]
 
     # filter by day of week if applicable to create new dataframe
@@ -101,15 +101,15 @@ def time_stats(df):
     df["Start Time"] = pd.to_datetime(df["Start Time"])
     df["month"] = df["Start Time"].dt.month_name()
     popular_month = df["month"].mode()[0]
-    
+
     print("Most Frequent Month:", popular_month)
-     
+
 
     # Display the most common day of week
     df["Start Time"] = pd.to_datetime(df["Start Time"])
     df["day_of_week"] = df["Start Time"].dt.weekday_name
     popular_day = df["day_of_week"].mode()[0]
-    
+
     print('Most Frequent Day:', popular_day)
 
 
@@ -134,8 +134,8 @@ def station_stats(df):
     common_start_station = df['Start Station'].mode()[0]
 
     print("Most Popular Start Station:", common_start_station)
-    
-    
+
+
 
     # Display most commonly used end station
     common_end_station = df["End Station"].mode()[0]
@@ -143,7 +143,7 @@ def station_stats(df):
     print("Most Popular End Station:", common_end_station)
 
     # Display most frequent combination of start station and end station trip
-    df["station_combination"] = "'" + df["Start Station"] + "'" + " and " + "'" + df["End Station"] + "'"
+    df["station_combination"] = "'{}' and '{}'".format(df["Start Station"], df["End Station"])
     common_station_combo = df["station_combination"].mode()[0]
     print("Most Popular Combination Of Start Station and End Station:", common_station_combo)
 
@@ -160,7 +160,7 @@ def trip_duration_stats(df):
     # Display total travel time
     total_travel_time = df["Trip Duration"].sum()
     print("Total Travel Time:", total_travel_time, "seconds")
-    
+
 
     # Display mean travel time
     mean_travel_time = df["Trip Duration"].mean()
@@ -211,7 +211,7 @@ def user_stats(df, city):
 
 def raw_data(df):
     """Displays raw data when requested. 5 lines of data are displayed at a time"""
-    
+
     data_input = input("\nWould you like to see raw data for your selection? Enter yes or no: ").lower()
 
     # variables to get the row index range
@@ -228,7 +228,7 @@ def raw_data(df):
             break
         else:
             data_input = input("Unexpected input. Would you like to see raw data for your selection? Enter yes or no: ").lower()
-    
+
 
 def main():
     while True:
@@ -243,17 +243,17 @@ def main():
         raw_data(df)
 
         restart = input("\nWould you like to restart? Enter yes or no: ").lower()
-        
+
         while True:
             if restart == 'yes' or restart == 'no':
                 break
             else:
                 restart = input("\nUnexpected input. Would you like to restart? Enter yes or no: ").lower()
-                
+
         if restart != "yes":
             break
             print("Thank you for your query!")
-          
+
 
 
 if __name__ == "__main__":
