@@ -1,0 +1,6 @@
+Resources used:
+
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.month_name.html
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.min.html
+https://www.geeksforgeeks.org/how-to-convert-float-to-int-in-python/
+https://pythonexamples.org/pandas-dataframe-head-get-first-n-rows/
