@@ -53,8 +53,6 @@ def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
 
-    Practice Problem #3 was utilized for this portion.
-
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
@@ -90,8 +88,6 @@ def load_data(city, month, day):
 def time_stats(df):
     """
     Displays statistics on the most frequent times of travel.
-
-    Practice Problem #1 information was utilized for this portion.
     """
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
@@ -143,7 +139,7 @@ def station_stats(df):
     print("Most Popular End Station:", common_end_station)
 
     # Display most frequent combination of start station and end station trip
-    df["station_combination"] = "'" + df["Start Station"] + "'" + " and " + "'" + df["End Station"] + "'"
+    df["station_combination"] = "'{}' and '{}'".format(df["Start Station"], df["End Station"])
     common_station_combo = df["station_combination"].mode()[0]
     print("Most Popular Combination Of Start Station and End Station:", common_station_combo)
 
