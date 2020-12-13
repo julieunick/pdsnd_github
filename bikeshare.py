@@ -53,8 +53,6 @@ def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
 
-    Practice Problem #3 was utilized for this portion.
-
     Args:
         (str) city - name of the city to analyze
         (str) month - name of the month to filter by, or "all" to apply no month filter
